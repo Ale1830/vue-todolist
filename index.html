@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <title>vue-todolist</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>Lista spesa</h1>
+            <input v-model="userText" type="text">
+            <button @click="add">
+                Add
+            </button>
+            <ul>
+                <li v-for ="(prodotto,indice) in list">
+                    <span :class="prodotto.done==true ? 'barrato' : '' "> {{prodotto.text}} </span>
+                    <span @click="remove(indice)">x</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="vue.js"></script>
+</body>
+</html>
